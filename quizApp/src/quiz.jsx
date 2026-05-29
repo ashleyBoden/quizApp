@@ -1,9 +1,14 @@
 import { useState } from "react";
+import { useMemo } from "react";
+import { shuffleArray } from "./App";
 
 export default function Quiz({ questions, questionIndex, score, setScore, setScreen, setQuestionIndex }) {
 
   const [hasAnswered, setHasAnswered] = useState(false);
   const [selectedAnswer, setSelectedAnswer] = useState("");
+  const shuffledAnswers = useMemo(() => {
+    return shuffleArray(questions[questionIndex].answers);
+  }, [questionIndex, questions]);
 
   function handleAnswer(answer) {
     if (answer === questions[questionIndex].correctAnswer) {
@@ -16,22 +21,22 @@ export default function Quiz({ questions, questionIndex, score, setScore, setScr
     }    
   }
 
-function getAnswerClass(answer) {
-    if (!hasAnswered) return "answer";
-    if (answer === questions[questionIndex].correctAnswer) return "answer correct";
-    if (answer === selectedAnswer) return "answer incorrect";
-    return "answer";
-}
+    function getAnswerClass(answer) {
+        if (!hasAnswered) return "answer";
+        if (answer === questions[questionIndex].correctAnswer) return "answer correct";
+        if (answer === selectedAnswer) return "answer incorrect";
+        return "answer";
+    }
 
     return (
         <div className="card">
             <p className="questionNumber">Question {questionIndex + 1} of {questions.length}</p>
             <p className="question">{questions[questionIndex].question}</p>
             <ul className="answers">
-                {questions[questionIndex].answers.map((answer) => (
-                    <li className={getAnswerClass(answer)} key={answer} onClick={() => 
-                        handleAnswer(answer)}>
-                        {answer}
+                {shuffledAnswers.map((answer) => (
+                    <li className={getAnswerClass(answer)} key={answer} onClick={!hasAnswered ? () => 
+                        handleAnswer(answer) : null}>
+                        {answer}                        
                     </li>
                 ))}
             </ul>
@@ -40,11 +45,9 @@ function getAnswerClass(answer) {
                 <button className="next-btn" onClick={() => {
                     setHasAnswered(false);
                     setSelectedAnswer("");
-
                     if (questionIndex >= questions.length - 1) {
-                        setScreen("result");
-                    } else {
-                        setQuestionIndex(questionIndex + 1);
+                        setScreen("result");                        } else {
+                        setQuestionIndex(questionIndex + 1);                        
                     }
                 }}>Next</button>
             )}

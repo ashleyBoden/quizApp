@@ -85,7 +85,7 @@ ul.answers li {
   font-size: 24px;
 }
 
-.start-card p{
+.start-card p {
   line-height: 0.025;
   flex: 1;
 }
@@ -99,6 +99,7 @@ ul.answers li {
   font-size: 16px;
   transition: background-color 0.5s, color 0.5s;
   width: 100%;
+  border-radius: 4px;
 }
 
 .start-btn:hover, .restart-btn:hover {
