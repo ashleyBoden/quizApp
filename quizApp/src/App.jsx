@@ -21,7 +21,7 @@ export default function App() {
   const [shuffledQuestions, setShuffledQuestions] = useState(questions);
 
   if (screen === "start") return <Start startQuiz={() => {
-    setShuffledQuestions(shuffleArray(questions));
+    setShuffledQuestions(shuffleArray(questions).slice(0, 10));
     setScreen("quiz");
   }} />;
   if (screen === "quiz") return <Quiz questions={shuffledQuestions} questionIndex={questionIndex} score={score} setScore={setScore} setScreen={setScreen} setQuestionIndex={setQuestionIndex} />;

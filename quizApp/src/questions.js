@@ -38,7 +38,43 @@ const questions = [
     {
         question: "What is the capital of Canada?",
         answers: ["Ottawa", "Toronto", "Vancouver", "Montreal"],
-        correctAnswer: "Ottawa",}
+        correctAnswer: "Ottawa",},
+    {
+        question: "What is the largest desert in the world?",
+        answers: ["Sahara Desert", "Gobi Desert", "Kalahari Desert", "Arabian Desert"],
+        correctAnswer: "Sahara Desert",},
+    {
+        question: "What is the chemical symbol for silver?",
+        answers: ["Ag", "Au", "Fe", "Pb"],
+        correctAnswer: "Ag",},
+    {
+        question: "What is the capital of Italy?",
+        answers: ["Rome", "Milan", "Naples", "Turin"],
+        correctAnswer: "Rome",},
+    {
+        question: "What is the largest continent on Earth?",
+        answers: ["Asia", "Africa", "North America", "Europe"],
+        correctAnswer: "Asia",},
+    {
+        question: "What is the chemical symbol for iron?",
+        answers: ["Fe", "Au", "Ag", "Pb"],
+        correctAnswer: "Fe",},
+    {
+        question: "What is the capital of Brazil?",
+        answers: ["Brasília", "Rio de Janeiro", "São Paulo", "Salvador"],
+        correctAnswer: "Brasília",},
+    {
+        question: "What is the largest island in the world?",
+        answers: ["Greenland", "New Guinea", "Borneo", "Madagascar"],
+        correctAnswer: "Greenland",},
+    {
+        question: "What is the chemical symbol for lead?",
+        answers: ["Pb", "Au", "Ag", "Fe"],
+        correctAnswer: "Pb",},
+    {
+        question: "What is the capital of Russia?",
+        answers: ["Moscow", "Saint Petersburg", "Novosibirsk", "Yekaterinburg"],
+        correctAnswer: "Moscow",}
 ]
 
 export default questions;

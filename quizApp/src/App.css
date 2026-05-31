@@ -48,6 +48,7 @@ ul.answers li {
   margin-top: 20px;
   align-self: center;
   justify-self: center;
+  
 }
 
 .next-btn {
@@ -105,4 +106,12 @@ ul.answers li {
 .start-btn:hover, .restart-btn:hover {
   background-color: #000000;
   color: white;
+}
+
+.timer {
+  font-size: 18px;
+  color: #555;
+  position: absolute;
+  top: 20px;
+  left: 20px;
 }
